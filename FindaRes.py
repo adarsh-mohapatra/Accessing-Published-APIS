@@ -1,6 +1,10 @@
+# sampple python code to access pubished apis
+# getGeocodeLocation function uses google maps API to get the lattitude and longitude
+# findARestaurant function uses Foursquare API to get the name, address and phone 
 import json, requests
-CLIENT_ID = "LBZZAKKU0NECPFNDANYP5CFHC1SZN3X0OIIS15Y11KG5UQO2"
-CLIENT_SECRET = "PB0MEXGSDSRWDM50ZRJBWEK5AT1PBJYNYFCUUWXNOW331I1O"
+# use your client id and client secret
+CLIENT_ID = "FourSquare Client ID"
+CLIENT_SECRET = "FourSquare Client Secret"
 
 
 def getGeocodeLocation(inputString):
@@ -21,7 +25,7 @@ def getGeocodeLocation(inputString):
 	geodata['lat'] = result['geometry']['location']['lat']
 	geodata['lng'] = result['geometry']['location']['lng']
 	return (geodata['lat'],geodata['lng'])
-	#return
+	
 def findARestaurant(food,address):
 	
 	# Call getGeocodeLocation to get the long and lat	
